@@ -29,5 +29,17 @@ Planned sections include:
 
 ---
 
-## 📂 Project Structure
+🌐 Domain & Hosting
 
+The website is intended to be hosted as a static site and connected to the custom domain:
+
+https://zetaiotanupes.com
+
+
+Deployment may be handled using services such as GitHub Pages or Vercel.
+Domain management and DNS configuration are handled separately from development.
+
+📌 Disclaimer
+
+This website is maintained by the Zeta Iota Chapter.
+It is not an official website of Kappa Alpha Psi Fraternity, Inc. unless otherwise stated.
