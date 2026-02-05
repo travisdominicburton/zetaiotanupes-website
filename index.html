@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,70 +14,94 @@
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css" />
   <!-- Optional: Fonts -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> -->
 </head>
+
 <body>
 
   <header class="site-header">
     <nav class="navbar">
-     <a href="zeta-iota-lineage.html">ZI Lineage</a>
-     <a href="contact.html">Contact Us</a>
-     <a href="about-us.html">About Us</a>
-     <a href="fraterity-background.html">Fraternity</a>
-     <a href="calendar.html">Calendar</a>
+      <a href="zeta-iota-lineage.html">ZI Lineage</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="about-us.html">About Us</a>
+      <a href="fraterity-background.html">Fraternity</a>
+      <a href="calendar.html">Calendar</a>
     </nav>
   </header>
 
   <header class="hero-header">
     <div>
       <img src="images/zi-logo.png" alt="ZI-Logo" width="250" height="350">
-      <h1>Welcome to Zeta Iota Nupes Website</h1>
+      <h1>Welcome to Zeta Iota Nupes</h1>
     </div>
   </header>
 
   <section class="gallery" aria-label="Photo gallery">
-  <h2 class="gallery-title">ZI Gallery</h2>
+    <h2 class="gallery-title">ZI Gallery</h2>
 
-  <div class="carousel" data-carousel>
-    <button class="carousel-btn" type="button" data-prev aria-label="Previous photo">
-      &#10094;
-    </button>
+    <div class="carousel" data-carousel>
+      <button class="carousel-btn" type="button" data-prev aria-label="Previous photo">
+        &#10094;
+      </button>
 
-    <div class="carousel-viewport">
-      <div class="carousel-track">
-        <img src="images/homepage1.JPG" alt="Zeta Iota Nupes 1" width="450" height="350" />
-        <img src="images/homepage2.jpg" alt="Zeta Iota Nupes 2" width="250" height="350"/>
-        <img src="images/homepage3.JPG" alt="Zeta Iota Nupes 3" width="450" height="350"/>
+      <div class="carousel-viewport">
+        <div class="carousel-track">
+          <img src="images/homepage1.jpg" alt="Zeta Iota Nupes 1" width="450" height="350" />
+          <img src="images/homepage2.JPG" alt="Zeta Iota Nupes 2" width="250" height="350" />
+          <img src="images/homepage3.png" alt="Zeta Iota Nupes 3" width="450" height="350" />
+          <img src="images/homepage4.jpg" alt="Zeta Iota Nupes 4" width="450" height="350" />
+          <img src="images/homepage5.JPG" alt="Zeta Iota Nupes 5" width="450" height="350" />
+        </div>
       </div>
-    </div>
 
-    <button class="carousel-btn" type="button" data-next aria-label="Next photo">
-      &#10095;
-    </button>
-  </div>
-</section>
-  
+      <button class="carousel-btn" type="button" data-next aria-label="Next photo">
+        &#10095;
+      </button>
+    </div>
+  </section>
+
   <hr>
 
   <header>
-   <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&title=Public%20Events%20Calendar&showCalendars=0&showTabs=0&showDate=0&showTitle=0&src=MThkMWU4Y2M4ZTc2NTc5N2EyMzFhYmVlYmEwMmYwZWVhYzI4NDUwYzNlMTM4MzU5NmQ3ZmVhZDExYmNjMmJkNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23dc143c" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <iframe
+      src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&title=Public%20Events%20Calendar&showCalendars=0&showTabs=0&showDate=0&showTitle=0&src=MThkMWU4Y2M4ZTc2NTc5N2EyMzFhYmVlYmEwMmYwZWVhYzI4NDUwYzNlMTM4MzU5NmQ3ZmVhZDExYmNjMmJkNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23dc143c"
+      style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
   </header>
 
-  <footer>
-  <a href="tel:16786998369">
-    <i class="fa-solid fa-phone"></i>
-    (678) 378-9963
-  </a>
-  <div>&copy; <span id="year"></span> Zeta Iota Nupes. All rights reserved</div>
-  <img src="images/klassikcity.png" alt="ZI-Logo" width="50" height="50">
-  <!-- Scripts -->
-  
-  <script>
-    // Auto-update footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-  <script src="js/main.js"></script>
+  <footer class=site-footer>
+    <div class=footer-contents>
+      
+      <!-- LEFT: Logos -->
+      <div class = footer-logos>
+        <img src="images/zi-logo.png" alt="ZI-Logo" width="50" height="50">
+        <img src="images/klassikcity.png" alt="ZI-Logo" width="50" height="50">
+      </div>
+
+      <!-- CENTER: Copyright -->
+
+      <div class="copyright">&copy; <span id="year"></span> Zeta Iota Nupes. All rights reserved</div>
+
+      <!-- RIGHT: Contact -->
+      <div class=footer-contact>
+        <a href="tel:16786998369">
+          <i class="fa-solid fa-phone"></i>
+          (678) 378-9963
+        </a>
+        <a href="mailto:uganupes@gmail.com">
+          <i class="fa-solid fa-envelope"></i>
+          info@zetaiotanupes.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      // Auto-update footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="js/main.js"></script>
 
 </body>
+
 </html>

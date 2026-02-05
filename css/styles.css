@@ -8,44 +8,85 @@ body {
 /* === Header for all Webpages === */
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar {
-  background-color: #220202;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  font-family: 'Tangerine', serif;
-  font-size: 15px;
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;   /* keeps it above other sections */
+    background-color: #220202;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Tangerine', serif;
+    font-size: 15px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* keeps it above other sections */
 }
 
 .navbar a {
-  color: whitesmoke;
-  text-decoration: none;
+    color: whitesmoke;
+    text-decoration: none;
 }
 
 .navbar a:hover {
-  text-decoration: underline;
-  opacity: 0.6;
+    text-decoration: underline;
+    opacity: 0.6;
 }
 
 /* === Footer for all Webpages === */
 
 .site-footer {
-  background-color: #220202;
-  padding: 15px;
+    background-color: #220202;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Tangerine', serif;
+    font-size: 25px;
+    color: white;
+}
+
+.footer-contents {
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+/* LEFT: logos */
+.footer-logos {
   display: flex;
-  justify-content: space-between;
-  font-family: 'Tangerine', serif;
-  font-size: 25px;
-  color: white;   /* keeps it above other sections */
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+/* CENTER: copyright */
+.copyright {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* RIGHT: contact */
+.footer-contact {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.site-footer a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+    opacity: 0.6;
 }
 
 .site-footer a {
@@ -53,9 +94,20 @@ body {
   text-decoration: none;
 }
 
-.site-footer a:hover {
-  text-decoration: underline;
-  opacity: 0.6;
+.footer-contact i {
+  margin-right: 6px;
+}
+
+@media (max-width: 800px) {
+  .footer-contents {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
 }
 
 /* === Components/Pop ups ===*/
