@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com');
+
+/* === Base === */
+body {
+    margin: 0;
+}
+
+/* === Header for all Webpages === */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  background-color: #220202;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Tangerine', serif;
+  font-size: 15px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;   /* keeps it above other sections */
+}
+
+.navbar a {
+  color: #8b0000;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  opacity: 0.6;
+}
+/* === Components/Pop ups ===*/
