@@ -27,7 +27,7 @@ body {
 }
 
 .navbar a {
-  color: #8b0000;
+  color: whitesmoke;
   text-decoration: none;
 }
 
@@ -35,4 +35,27 @@ body {
   text-decoration: underline;
   opacity: 0.6;
 }
+
+/* === Footer for all Webpages === */
+
+.site-footer {
+  background-color: #220202;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Tangerine', serif;
+  font-size: 25px;
+  color: white;   /* keeps it above other sections */
+}
+
+.site-footer a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+  opacity: 0.6;
+}
+
 /* === Components/Pop ups ===*/
