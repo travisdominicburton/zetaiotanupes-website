@@ -60,7 +60,8 @@ body {
 /* LEFT: logos */
 .footer-logos {
   display: flex;
-  flex-direction: row; /* stacks them */
+  flex-direction: row;
+  /* stacks them */
   align-items: center;
   gap: 10px;
 }
@@ -81,7 +82,8 @@ body {
 }
 
 .footer-contact a {
-  display: flex; /* icon + text */
+  display: flex;
+  /* icon + text */
   justify-content: flex-end;
   gap: 10px;
   color: whitesmoke;
@@ -115,16 +117,18 @@ body {
 /* === Homepage ===*/
 .hero-header {
   background: 
-    linear-gradient(to right, #000000 0%, transparent 20%, transparent 80%, #000000 100%),
-    linear-gradient(rgba(128, 128, 128, 0.7), rgba(128, 128, 128, 0.7)),
-    #dc143c url('../images/homepage-background.png') center/contain no-repeat;
+    linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 15%, transparent 85%, rgba(139, 0, 0, 0.8) 100%),
+    linear-gradient(rgba(128, 128, 128, 0.4), rgba(128, 128, 128, 0.4)),
+    #dc143c url('../images/homepage-background.png') center/cover no-repeat;
   padding: 60px 20px;
-  min-height: 400px;
+  min-height: 1200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 30px;
+  background-size: cover;
+  background-position: center center;
 }
 
 .zi-logo-container img {
@@ -261,25 +265,27 @@ body {
 
 .message-box {
   background-color: rgba(211, 211, 211, 0.9);
-  padding: 30px 40px;
+  padding: 50px 60px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-height: 1800px;
+  min-height: 700px;
   height: 100%;
   max-width: 1000px;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .message-box p {
   font-family: Arial, sans-serif;
-  font-size: 20px;
-  line-height: 1.6;
+  font-size: 24px;
+  line-height: 1.8;
   color: #220202;
   margin: 0;
 }
 
 .message-signature {
-  margin-top: 20px;
+  margin-top: 30px;
   font-style: italic;
   text-align: right;
 }
@@ -288,16 +294,16 @@ body {
 @media (max-width: 1024px) {
   .gallery {
     grid-template-columns: 1fr;
-    grid-template-areas: 
+    grid-template-areas:
       "carousel"
       "message";
     gap: 60px;
   }
-  
+
   .gallery-divider {
     display: none;
   }
-  
+
   .carousel {
     grid-template-columns: 60px 1fr 60px;
   }
