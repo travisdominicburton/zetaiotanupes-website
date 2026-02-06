@@ -18,13 +18,29 @@ body {
   padding: 15px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-family: 'Tangerine', serif;
-  font-size: 15px;
+  font-size: 21px;
   color: white;
   position: sticky;
   top: 0;
   z-index: 1000;
   /* keeps it above other sections */
+}
+
+.navbar .logo {
+  flex-shrink: 0;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 120px; /* spacing between nav items */
+  align-items: center;
+  margin-left: auto; /* pushes nav items to the right */
+}
+
+.navbar .nav-links a:last-child {
+  margin-right: 80px;
 }
 
 .navbar a {
@@ -36,6 +52,8 @@ body {
   text-decoration: underline;
   opacity: 0.6;
 }
+
+
 
 /* === Footer for all Webpages === */
 
@@ -83,7 +101,6 @@ body {
 
 .footer-contact a {
   display: flex;
-  /* icon + text */
   justify-content: flex-end;
   gap: 10px;
   color: whitesmoke;
@@ -294,9 +311,11 @@ body {
   background: radial-gradient(circle, #dc143c 0%, #8b0000 50%, #000000 100%);
   padding: 60px 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 500px;
+  position: relative;
 }
 
 .homepage-divider {
@@ -304,10 +323,23 @@ body {
   color: black;
 }
 
+.calendar-title {
+  font-family: 'Tangerine', serif;
+  font-size: 48px;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+  z-index: 10;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
 .calendar-section iframe {
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   background-color: white;
+  position: relative;
+  z-index: 1;
 }
 
 /* Responsive */

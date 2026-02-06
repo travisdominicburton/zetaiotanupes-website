@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,19 +23,27 @@
 
   <header class="site-header">
     <nav class="navbar">
-      <a href="zeta-iota-lineage.html">ZI Lineage</a>
-      <a href="contact.html">Contact Us</a>
-      <a href="about-us.html">About Us</a>
-      <a href="fraterity-background.html">Fraternity</a>
-      <a href="calendar.html">Calendar</a>
+      <div class="navlogo">
+        <a href="index.html">
+          <img src="images/zetaiotahomepage.png" alt="Homepage">
+        </a>
+      </div>
+
+      <div class="nav-links">
+        <a href="zi-lineage.html">ZI Lineage</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="about-us.html">About Us</a>
+        <a href="fraterity-background.html">Fraternity</a>
+        <a href="calendar.html">Calendar</a>
+      </div>
     </nav>
   </header>
 
   <header class="hero-header">
-    <div class = zi-logo-container>
+    <div class=zi-logo-container>
       <img src="images/zi-logo.png" alt="ZI-Logo" width="250" height="350">
     </div>
-    <div class = welcome-box>
+    <div class=welcome-box>
       <h1>Welcome to the Zeta Iota Nupes</h1>
     </div>
   </header>
@@ -43,12 +52,12 @@
     <!-- Left Side: Gallery -->
     <div class="gallery-carousel-side">
       <h2 class="gallery-title">ZI Gallery</h2>
-  
+
       <div class="carousel" data-carousel>
         <button class="carousel-btn" type="button" data-prev aria-label="Previous photo">
           &#10094;
         </button>
-  
+
         <div class="carousel-viewport">
           <div class="carousel-track">
             <img src="images/homepage1.jpg" alt="Zeta Iota Nupes 1" width="600" height="750" />
@@ -58,16 +67,16 @@
             <img src="images/homepage5.JPG" alt="Zeta Iota Nupes 5" width="600" height="800" />
           </div>
         </div>
-  
+
         <button class="carousel-btn" type="button" data-next aria-label="Next photo">
           &#10095;
         </button>
       </div>
     </div>
-  
+
     <!-- Vertical Divider -->
     <div class="gallery-divider"></div>
-  
+
     <!-- Right Side: Polemarch Message -->
     <div class="polemarch-message">
       <h2>Message from the Polemarch</h2>
@@ -75,24 +84,27 @@
         <p>
           Brothers of Zeta Iota,
           <br><br>
-          As we continue to uphold the principles of achievement and brotherhood, let us remember that our strength lies in our unity and commitment to excellence. Together, we build a legacy that extends beyond ourselves.
+          As we continue to uphold the principles of achievement and brotherhood, let us remember that our strength lies
+          in our unity and commitment to excellence. Together, we build a legacy that extends beyond ourselves.
           <br><br>
           <span class="message-signature">— The Polemarch</span>
         </p>
       </div>
     </div>
   </section>
-  <section class = "calendar-section">
+
+  <section class="calendar-section">
+    <h2 class="calendar-title">ZI Calendar</h2>
     <iframe
       src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&title=Public%20Events%20Calendar&showCalendars=0&showTabs=0&showDate=0&showTitle=0&src=MThkMWU4Y2M4ZTc2NTc5N2EyMzFhYmVlYmEwMmYwZWVhYzI4NDUwYzNlMTM4MzU5NmQ3ZmVhZDExYmNjMmJkNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23dc143c"
       style="border-width:0" width="700" height="500" frameborder="0" scrolling="no"></iframe>
   </section>
- 
+
   <footer class=site-footer>
     <div class=footer-contents>
-      
+
       <!-- LEFT: Logos -->
-      <div class = footer-logos>
+      <div class=footer-logos>
         <img src="images/zi-logo.png" alt="ZI-Logo" width="100" height="100">
         <img src="images/klassikcity.png" alt="ZI-Logo" width="100" height="100">
       </div>
@@ -119,6 +131,7 @@
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
     <script src="js/main.js"></script>
-</footer>
+  </footer>
 </body>
+
 </html>
