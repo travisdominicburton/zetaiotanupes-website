@@ -34,44 +34,142 @@
         <a href="contact.html">Contact Us</a>
         <a href="about-us.html">About Us</a>
         <a href="fraternity-background.html">Fraternity</a>
-        <a href="calendar.html">Calendar</a>
       </div>
     </nav>
   </header>
-<body>
-    
-  <footer class=site-footer>
-    <div class=footer-contents>
 
-      <!-- LEFT: Logos -->
-      <div class=footer-logos>
-        <img src="images/zi-logo.png" alt="ZI-Logo" width="100" height="100">
-        <img src="images/klassikcity.png" alt="ZI-Logo" width="100" height="100">
+  <body>
+    <main class="contact-main">
+      <section class="contact-hero">
+        <h1>Contact Us</h1>
+        <p>Get in touch with Zeta Iota</p>
+      </section>
+
+      <section class="contact-content">
+        <!-- Contact Info Cards -->
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <h3>Call Us</h3>
+            <a href="tel:16783789963">(678) 378-9963</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <h3>Email Us</h3>
+            <a href="mailto:uganupes@gmail.com">uganupes@gmail.com</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="card-icon">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <h3>Follow Us</h3>
+            <a href="https://www.instagram.com/uganupes" target="_blank" rel="noopener noreferrer">@uganupes</a>
+          </div>
+        </div>
+
+        <!-- PayPal Section -->
+        <div class="paypal-section">
+          <div class="section-header">
+            <i class="fa-brands fa-paypal"></i>
+            <h2>Support Zeta Iota</h2>
+          </div>
+          <p class="paypal-description">
+            Your donations help support our chapter's initiatives, community service projects, and brotherhood events.
+            Thank you for your continued support!
+          </p>
+          <div class="paypal-button-container">
+            <!-- Replace with your actual PayPal button code or link -->
+            <a href="https://www.paypal.com/paypalme/yourpaypallink" target="_blank" rel="noopener noreferrer"
+              class="paypal-button">
+              <i class="fa-brands fa-paypal"></i>
+              Donate via PayPal
+            </a>
+            <p class="paypal-note">Secure payment through PayPal</p>
+          </div>
+        </div>
+
+        <!-- Google Form Section -->
+        <div class="form-section">
+          <div class="section-header">
+            <i class="fa-solid fa-message"></i>
+            <h2>Send Us a Message</h2>
+          </div>
+          <p class="form-description">
+            Have questions about Zeta Iota or interested in learning more about our chapter?
+            Fill out the form below and we'll get back to you soon!
+          </p>
+          <div class="google-form-container">
+            <!-- REPLACE THIS URL WITH YOUR ACTUAL GOOGLE FORM EMBED URL -->
+            <!-- To get the embed URL: Open your Google Form → Click "Send" → Click the "<>" embed icon → Copy the URL from src="" -->
+            <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="100%"
+              height="800" frameborder="0" marginheight="0" marginwidth="0">
+              Loading…
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="social-section">
+          <h2>Connect With Us</h2>
+          <div class="social-links">
+            <a href="https://www.instagram.com/uganupes" target="_blank" rel="noopener noreferrer"
+              class="social-link instagram">
+              <i class="fa-brands fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <!-- Add more social links as needed -->
+            <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer"
+              class="social-link facebook">
+              <i class="fa-brands fa-facebook"></i>
+              <span>Facebook</span>
+            </a>
+            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer"
+              class="social-link twitter">
+              <i class="fa-brands fa-twitter"></i>
+              <span>Twitter</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class=site-footer>
+      <div class=footer-contents>
+
+        <!-- LEFT: Logos -->
+        <div class=footer-logos>
+          <img src="images/zi-logo.png" alt="ZI-Logo" width="100" height="100">
+          <img src="images/klassikcity.png" alt="ZI-Logo" width="100" height="100">
+        </div>
+
+        <!-- CENTER: Copyright -->
+        <div class="copyright">&copy; <span id="year"></span> Zeta Iota Nupes. All rights reserved</div>
+
+        <!-- RIGHT: Contact -->
+        <div class=footer-contact>
+          <a href="tel:16786998369">
+            <i class="fa-solid fa-phone"></i>
+            (678) 378-9963
+          </a>
+          <a href="mailto:uganupes@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            uganupes@gmail.com
+          </a>
+        </div>
       </div>
 
-      <!-- CENTER: Copyright -->
-      <div class="copyright">&copy; <span id="year"></span> Zeta Iota Nupes. All rights reserved</div>
-
-      <!-- RIGHT: Contact -->
-      <div class=footer-contact>
-        <a href="tel:16786998369">
-          <i class="fa-solid fa-phone"></i>
-          (678) 378-9963
-        </a>
-        <a href="mailto:uganupes@gmail.com">
-          <i class="fa-solid fa-envelope"></i>
-          uganupes@gmail.com
-        </a>
-      </div>
-    </div>
-
-    <!-- Scripts -->
-    <script>
-      // Auto-update footer year
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-    <script src="js/main.js"></script>
-  </footer>
-</body>
+      <!-- Scripts -->
+      <script>
+        // Auto-update footer year
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+      <script src="js/main.js"></script>
+    </footer>
+  </body>
 
 </html>
