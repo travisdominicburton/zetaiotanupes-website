@@ -1,11 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Zeta Iota Nupes</title>
+
+  <!-- Meta -->
+  <meta name="description" content="Official website of Zeta Iota Nupes" />
+  <meta name="author" content="Zeta Iota Nupes" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Optional: Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> -->
 </head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="navlogo">
+        <a href="index.html">
+          <img src="images/zetaiotahomepage.png" alt="Homepage">
+        </a>
+      </div>
+
+      <div class="nav-links">
+        <a href="zi-lineage.html">ZI Lineage</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="about-us.html">About Us</a>
+        <a href="fraternity-background.html">Fraternity</a>
+        <a href="calendar.html">Calendar</a>
+      </div>
+    </nav>
+  </header>
 <body>
     
+  <footer class=site-footer>
+    <div class=footer-contents>
+
+      <!-- LEFT: Logos -->
+      <div class=footer-logos>
+        <img src="images/zi-logo.png" alt="ZI-Logo" width="100" height="100">
+        <img src="images/klassikcity.png" alt="ZI-Logo" width="100" height="100">
+      </div>
+
+      <!-- CENTER: Copyright -->
+      <div class="copyright">&copy; <span id="year"></span> Zeta Iota Nupes. All rights reserved</div>
+
+      <!-- RIGHT: Contact -->
+      <div class=footer-contact>
+        <a href="tel:16786998369">
+          <i class="fa-solid fa-phone"></i>
+          (678) 378-9963
+        </a>
+        <a href="mailto:uganupes@gmail.com">
+          <i class="fa-solid fa-envelope"></i>
+          uganupes@gmail.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      // Auto-update footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="js/main.js"></script>
+  </footer>
 </body>
+
 </html>
