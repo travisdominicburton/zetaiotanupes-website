@@ -380,9 +380,12 @@ body {
   justify-content: center;
 }
 
-/* Member Circle - PERFORMANCE OPTIMIZED */
+/* ===================================
+   MEMBER CIRCLE - FIXED FOR HOVER PIXELATION BUG
+   =================================== */
 .member-circle {
   position: relative;
+  display: block;
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -390,14 +393,22 @@ body {
   border: 4px solid var(--color-dark-red);
   background-color: var(--color-darker);
   cursor: pointer;
-  /* OPTIMIZED: Shorter transitions, GPU acceleration */
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: var(--shadow-heavy);
   flex-shrink: 0;
-  will-change: transform;
-  /* PERFORMANCE: Force GPU rendering */
+  
+  /* CRITICAL: Hardware acceleration and quality preservation */
   transform: translateZ(0);
+  -webkit-transform: translateZ(0);
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+  
+  /* Add perspective to prevent quality loss */
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  
+  /* Smooth transition */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-heavy);
 }
 
 .member-circle img {
@@ -406,20 +417,64 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-  /* PERFORMANCE: GPU acceleration for images */
-  transform: translateZ(0);
+  object-position: center;
+  display: block;
+  
+  /* CRITICAL: Maintain image quality during ALL transforms */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+  
+  /* Hardware acceleration for smooth scaling */
+  transform: translateZ(0) scale(1);
+  -webkit-transform: translateZ(0) scale(1);
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  
+  /* Smooth image transition */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Anti-aliasing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* HOVER EFFECT - Fixed to prevent pixelation */
 .member-circle:hover {
-  transform: translateY(-10px) scale(1.05) translateZ(0);
   border-color: var(--color-crimson);
   box-shadow: 0 15px 35px rgba(220, 20, 60, 0.5), 0 5px 15px rgba(0, 0, 0, 0.4);
+  transform: translateZ(0) translateY(-10px);
+  -webkit-transform: translateZ(0) translateY(-10px);
 }
 
 .member-circle:hover img {
-  transform: scale(1.1) translateZ(0);
+  /* Scale the IMAGE, not the container - prevents pixelation */
+  transform: translateZ(0) scale(1.1);
+  -webkit-transform: translateZ(0) scale(1.1);
+  
+  /* Force high-quality rendering during scale */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* HIGH-DPI / RETINA DISPLAY SPECIFIC */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi),
+       only screen and (min-resolution: 2dppx) {
+  
+  .member-circle img {
+    /* Force highest quality on retina displays */
+    image-rendering: -webkit-optimize-contrast !important;
+    
+    /* Ensure sharp rendering always */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  .member-circle:hover img {
+    /* Maintain quality during hover on retina */
+    image-rendering: -webkit-optimize-contrast !important;
+  }
 }
 
 .member-circle:focus,
@@ -515,12 +570,22 @@ body {
   border: 5px solid var(--color-dark-red);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
   position: relative;
+  
+  /* Apply same quality fixes to dialog image */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .dialog-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  
+  /* Ensure dialog image is also high quality */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .dialog-info {
@@ -687,6 +752,9 @@ body {
 /* ===================================
    CONTACT PAGE
    =================================== */
+/* ===================================
+   CONTACT PAGE - Optimized for MacBook Air
+   =================================== */
 .contact-main {
   background: radial-gradient(circle, #dc143c 0%, #8b0000 50%, #000000 100%);
   min-height: calc(100vh - 200px);
@@ -695,13 +763,13 @@ body {
 
 .contact-hero {
   text-align: center;
-  padding: 60px 20px 80px;
-  margin-bottom: 40px;
+  padding: 50px 20px 60px;
+  margin-bottom: 30px;
 }
 
 .contact-hero h1 {
   font-family: var(--font-heading);
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 700;
   color: var(--color-white);
   margin: 0 0 10px 0;
@@ -711,26 +779,26 @@ body {
 
 .contact-hero p {
   font-family: var(--font-body);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--color-gold);
   font-style: italic;
   margin: 0;
 }
 
 .contact-content {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 30px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 50px;
 }
 
 /* Contact Cards */
 .contact-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
   margin-bottom: 20px;
 }
 
@@ -738,7 +806,7 @@ body {
   background: rgba(42, 8, 8, 0.8);
   border: 2px solid var(--color-dark-red);
   border-radius: 12px;
-  padding: 40px 30px;
+  padding: 35px 25px;
   text-align: center;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -751,32 +819,33 @@ body {
 }
 
 .contact-card .card-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 20px;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 18px;
   background: linear-gradient(135deg, var(--color-dark-red), var(--color-crimson));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--color-white);
   box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
 }
 
 .contact-card h3 {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--color-white);
-  margin: 0 0 15px 0;
+  margin: 0 0 12px 0;
 }
 
 .contact-card a {
   font-family: var(--font-body);
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--color-gold);
   text-decoration: none;
   transition: color 0.3s ease;
+  word-break: break-word;
 }
 
 .contact-card a:hover {
@@ -789,7 +858,7 @@ body {
   background: rgba(42, 8, 8, 0.9);
   border: 3px solid var(--color-dark-red);
   border-radius: 16px;
-  padding: 50px 40px;
+  padding: 45px 35px;
   text-align: center;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
@@ -798,18 +867,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
 .section-header i {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--color-gold);
 }
 
 .section-header h2 {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--color-white);
   margin: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -818,27 +887,27 @@ body {
 .paypal-description,
 .form-description {
   font-family: var(--font-body);
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--color-light-gray);
-  line-height: 1.8;
+  line-height: 1.7;
   max-width: 700px;
-  margin: 0 auto 30px;
+  margin: 0 auto 25px;
 }
 
 .paypal-button-container {
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 .paypal-button {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   background: linear-gradient(135deg, #0070ba, #003087);
   color: var(--color-white);
   font-family: var(--font-body);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  padding: 18px 45px;
+  padding: 16px 40px;
   border-radius: 50px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -852,14 +921,14 @@ body {
 }
 
 .paypal-button i {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .paypal-note {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--color-light-gray);
-  margin-top: 15px;
+  margin-top: 12px;
   font-style: italic;
 }
 
@@ -868,16 +937,16 @@ body {
   background: rgba(42, 8, 8, 0.9);
   border: 3px solid var(--color-dark-red);
   border-radius: 16px;
-  padding: 50px 40px;
+  padding: 45px 35px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
 
 .form-section .section-header {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .google-form-container {
-  margin-top: 30px;
+  margin-top: 25px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -893,21 +962,21 @@ body {
 /* Social Media Section */
 .social-section {
   text-align: center;
-  padding: 40px 20px;
+  padding: 35px 20px;
 }
 
 .social-section h2 {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--color-white);
-  margin: 0 0 40px 0;
+  margin: 0 0 35px 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 25px;
   flex-wrap: wrap;
 }
 
@@ -916,13 +985,13 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  padding: 25px 35px;
+  padding: 22px 30px;
   background: rgba(42, 8, 8, 0.8);
   border: 2px solid var(--color-dark-red);
   border-radius: 12px;
   text-decoration: none;
   transition: all 0.3s ease;
-  min-width: 140px;
+  min-width: 130px;
 }
 
 .social-link:hover {
@@ -932,14 +1001,14 @@ body {
 }
 
 .social-link i {
-  font-size: 3rem;
+  font-size: 2.6rem;
   color: var(--color-white);
   transition: color 0.3s ease;
 }
 
 .social-link span {
   font-family: var(--font-body);
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--color-gold);
   font-weight: 600;
 }
@@ -959,46 +1028,56 @@ body {
   color: #1da1f2;
 }
 
-/* Contact Page Responsive */
-@media (max-width: 768px) {
+/* Media Query for MacBook Air and similar high-res displays */
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
   .contact-hero h1 {
-    font-size: 3rem;
+    font-size: 3.8rem;
   }
   
-  .contact-hero p {
-    font-size: 1.2rem;
-  }
-  
-  .section-header {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .section-header h2 {
-    font-size: 2rem;
-  }
-  
-  .paypal-section,
-  .form-section {
-    padding: 35px 25px;
-  }
-  
-  .social-links {
-    gap: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-hero h1 {
-    font-size: 2.5rem;
+  .contact-content {
+    max-width: 1500px;
+    padding: 0 40px;
   }
   
   .contact-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
   
-  .paypal-button {
-    font-size: 1.1rem;
-    padding: 15px 35px;
+  .contact-card {
+    padding: 38px 28px;
+  }
+  
+  .contact-card .card-icon {
+    width: 75px;
+    height: 75px;
+    font-size: 1.9rem;
+  }
+  
+  .contact-card h3 {
+    font-size: 1.4rem;
+  }
+  
+  .section-header i {
+    font-size: 2.4rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2.4rem;
+  }
+  
+  .social-link i {
+    font-size: 2.8rem;
+  }
+}
+
+/* Fine-tuning for exact MacBook Air resolution */
+@media screen and (min-width: 1440px) and (max-width: 1680px) {
+  .contact-content {
+    padding: 0 50px;
+  }
+  
+  .contact-cards {
+    gap: 28px;
   }
 }
