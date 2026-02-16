@@ -581,7 +581,7 @@ document.addEventListener('DOMContentLoaded', function () {
       {
         season: 'Spring',
         line: '11 H.I.T.M.E.N of the Kappa Mafia',
-        description: 'Eleven hitmen of the brotherhood.',
+        description: 'Zeta Iota Spring 2018',
         names: ['Justin Nixon', 'Cejhae Greene', 'Trey Grant', 'Ian Mcintyre', 'Jordan Vaughn', 'KJ Smith', 'Jordan McGruder', 'Endalkachew Ferede', 'Michael Chigbu', 'Michael Earl', 'Malik King'],
         images: ['images/klassikcity.png', 'images/zi-logo.png', 'images/klassikcity.png']
       }
@@ -590,7 +590,7 @@ document.addEventListener('DOMContentLoaded', function () {
       {
         season: 'Fall',
         line: 'Ambassadors of the ZI Regime',
-        description: 'Nine ambassadors representing ZI excellence.',
+        description: 'Zeta Iota Fall 2019',
         names: ['Bryant Bolds II', 'Matthew Meadows', 'Joshua Bennafield', 'Maurice Peoples Jr.', 'Jalen Polk', 'Brandon Marshall', 'Julianel Roman', 'Michael Nicholls', 'Adrian Thomas Jr'],
         images: ['images/zi-logo.png', 'images/klassikcity.png', 'images/zi-logo.png']
       }
@@ -598,7 +598,7 @@ document.addEventListener('DOMContentLoaded', function () {
     2020: [
       {
         season: 'Spring',
-        line: 'The Five Survivors of the ZI Barrikade',
+        line: 'Zeta Iota Spring 2020',
         description: 'Five brothers surviving and thriving through challenges.',
         names: ['Dwight Coles III', 'Chazz Lezama-Francois', 'Tyler Fullwood', 'Brandon Trowel', 'Channing Tindall'],
         images: ['images/klassikcity.png', 'images/zi-logo.png', 'images/klassikcity.png']
@@ -607,17 +607,17 @@ document.addEventListener('DOMContentLoaded', function () {
     2024: [
       {
         season: 'Fall',
-        line: 'The Five Survivors of the ZI Barrikade',
-        description: 'Five brothers surviving and thriving through challenges.',
-        names: ['Dwight Coles III', 'Chazz Lezama-Francois', 'Tyler Fullwood', 'Brandon Trowel', 'Channing Tindall'],
-        images: ['images/klassikcity.png', 'images/zi-logo.png', 'images/klassikcity.png']
+        line: 'The 8 Defenders of the ZI Regime',
+        description: 'Zeta Iota Fall 2024',
+        names: ['Corey Straughter', 'Matthew Turnipseed', 'Grady Taylor III', 'Kyle Singer', 'Luke Williams', 'Semon Teklemariam', 'Kaleb Quince', 'Ronald Brown III'],
+        images: ['images/zi-lineage/fall2024-1.jpg', 'images/zi-logo.png', 'images/klassikcity.png']
       }
     ],
     2025: [
       {
         season: 'Spring',
         line: 'The 8 Enforcers of the ZI Coalition',
-        description: 'Five brothers surviving and thriving through challenges.',
+        description: 'Zeta Iota Spring 2025',
         names: ['Braylen Howell', 'Travis Burton', 'Demetri Hatten', 'Cameron Webb', 'Coleson Bowen', 'Victor Young', 'Myles Cutter', 'Temiloluwa Ojedapo'],
         images: ['images/homepage1.JPG', 'images/zi-logo.png', 'images/klassikcity.png']
       }
