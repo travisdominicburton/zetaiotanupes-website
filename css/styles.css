@@ -1134,3 +1134,479 @@ body {
     gap: 28px;
   }
 }
+
+
+/* History Sections - with fade separation */
+.history-section {
+  position: relative;
+  margin-bottom: 8rem; /* Increased spacing */
+  padding: 3rem;
+  background: linear-gradient(145deg, #2a0000 0%, #1a0000 100%);
+  border-left: 4px solid #8B0000;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(139, 0, 0, 0.3);
+}
+
+/* Fade effect after each section */
+.history-section::after {
+  content: '';
+  position: absolute;
+  bottom: -8rem;
+  left: 0;
+  right: 0;
+  height: 8rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(139, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(139, 0, 0, 0.15) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Remove the fade effect from the last section */
+.history-section:last-of-type::after {
+  display: none;
+}
+
+.history-section:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 6px 25px rgba(139, 0, 0, 0.4);
+}
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto; /* Add this if not present */
+}
+.hero-title { 
+  font-family: 'Cinzel', serif;
+  font-size: 4.2rem;
+  font-weight: 700;
+  color: #F8F4E3;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 10px rgba(139, 0, 0, 0.6), 0 0 25px rgba(139, 0, 0, 0.4), 2px 2px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  width: 100%;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #E8E2D0;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  opacity: 0.95;
+  text-align: center; 
+  width: 100%
+}
+
+/* Optional: Style the ® symbol slightly smaller */
+.hero-title sup {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+/* Content Container */
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background-color: #000000;
+}
+
+/* History Sections */
+.history-section {
+  position: relative;
+  margin-bottom: 10rem;
+  padding: 3rem;
+  background: linear-gradient(145deg, #2a0000 0%, #1a0000 100%);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(139, 0, 0, 0.3);
+}
+
+/* Left border with fade */
+.history-section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(
+    to bottom,
+    rgba(139, 0, 0, 0) 0%,
+    rgba(139, 0, 0, 0.2) 3%,
+    rgba(139, 0, 0, 0.5) 8%,
+    rgba(139, 0, 0, 1) 15%,
+    rgba(139, 0, 0, 1) 85%,
+    rgba(139, 0, 0, 0.5) 92%,
+    rgba(139, 0, 0, 0.2) 97%,
+    rgba(139, 0, 0, 0) 100%
+  );
+  border-radius: 8px 0 0 8px;
+  z-index: 1;
+}
+
+/* Section divider fade (keeping this for spacing) */
+.history-section::after {
+  content: '';
+  position: absolute;
+  bottom: -10rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 10rem;
+  background: 
+    linear-gradient(
+      to bottom,
+      rgba(42, 0, 0, 0.6) 0%,
+      rgba(26, 0, 0, 0.4) 10%,
+      rgba(15, 0, 0, 0.3) 20%,
+      rgba(5, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 1) 50%,
+      rgba(5, 0, 0, 0.2) 70%,
+      rgba(15, 0, 0, 0.3) 80%,
+      rgba(26, 0, 0, 0.4) 90%,
+      rgba(42, 0, 0, 0.6) 100%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Right border with fade - using a custom property */
+.history-section {
+  border-right: 4px solid;
+  border-image: linear-gradient(
+    to bottom,
+    rgba(139, 0, 0, 0) 0%,
+    rgba(139, 0, 0, 0.2) 3%,
+    rgba(139, 0, 0, 0.5) 8%,
+    rgba(139, 0, 0, 1) 15%,
+    rgba(139, 0, 0, 1) 85%,
+    rgba(139, 0, 0, 0.5) 92%,
+    rgba(139, 0, 0, 0.2) 97%,
+    rgba(139, 0, 0, 0) 100%
+  ) 1;
+}
+
+.history-section:last-of-type::after {
+  display: none;
+}
+
+.history-section:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 6px 25px rgba(139, 0, 0, 0.4);
+}
+
+/* Section Number */
+.section-number {
+  position: absolute;
+  top: -20px;
+  left: 30px;
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  opacity: 0.35;
+  font-family: Georgia, serif;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2.2rem;
+  color: #F5F5DC;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #B8860B;
+  font-style: italic;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+/* Section Content */
+.section-content {
+  color: #E8E8D0;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.section-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* Founders Highlight Box */
+.founders-highlight {
+  background: rgba(139, 0, 0, 0.2);
+  border: 2px solid #8B0000;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.founders-highlight h3 {
+  color: #F5F5DC;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.founders-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.founders-list li {
+  color: #E8E8D0;
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 3px solid #B8860B;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Blockquote */
+blockquote.founding-principle {
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.3) 0%, rgba(139, 0, 0, 0.1) 100%);
+  border-left: 5px solid #B8860B;
+  padding: 2rem;
+  margin: 2.5rem 0;
+  font-style: italic;
+  color: #F5F5DC;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  border-radius: 4px;
+  position: relative;
+}
+
+blockquote.founding-principle::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-size: 5rem;
+  color: #8B0000;
+  opacity: 0.3;
+  font-family: Georgia, serif;
+}
+
+/* Achievement Text */
+.achievement-text {
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 2rem;
+  background: linear-gradient(90deg, transparent 0%, rgba(139, 0, 0, 0.3) 50%, transparent 100%);
+  margin: 2rem 0;
+  border-top: 1px solid rgba(139, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(139, 0, 0, 0.5);
+}
+
+.achievement-text strong {
+  color: #B8860B;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+/* Milestone Box */
+.milestone-box {
+  background: linear-gradient(135deg, #8B0000 0%, #660000 100%);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2.5rem 0;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.5);
+}
+
+.milestone-date {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #F5F5DC;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.milestone-box p {
+  color: #F5F5DC;
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.4) 0%, rgba(139, 0, 0, 0.2) 100%);
+  border: 2px solid #8B0000;
+  border-radius: 8px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(139, 0, 0, 0.4);
+  border-color: #B8860B;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #B8860B;
+  margin-bottom: 0.5rem;
+  font-family: Georgia, serif;
+}
+
+.stat-label {
+  color: #F5F5DC;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* Closing Statement */
+.closing-statement {
+  font-size: 1.25rem;
+  text-align: center;
+  color: #F5F5DC;
+  font-weight: 500;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.2) 0%, transparent 100%);
+  border-radius: 8px;
+  margin-top: 3rem;
+  line-height: 1.8;
+}
+
+/* Emphasis Styles */
+strong {
+  color: #B8860B;
+  font-weight: 700;
+}
+
+em {
+  color: #F5F5DC;
+  font-style: italic;
+}
+
+sup {
+  font-size: 0.6em;
+  vertical-align: super;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .content-container {
+    padding: 2rem 1rem;
+  }
+  
+  .history-section {
+    padding: 2rem 1.5rem;
+    margin-bottom: 5rem;
+  }
+  
+  .history-section::after {
+    bottom: -5rem;
+    height: 5rem;
+  }
+  
+  .section-number {
+    font-size: 3rem;
+    top: -15px;
+    left: 15px;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .section-content {
+    font-size: 1rem;
+  }
+  
+  .founders-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  blockquote.founding-principle {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .history-section {
+    padding: 1.5rem 1rem;
+    margin-bottom: 4rem;
+  }
+  
+  .history-section::after {
+    bottom: -4rem;
+    height: 4rem;
+  }
+  
+  .section-title {
+    font-size: 1.4rem;
+  }
+  
+  .milestone-date {
+    font-size: 2rem;
+  }
+  
+  .milestone-box p {
+    font-size: 1rem;
+  }
+}
