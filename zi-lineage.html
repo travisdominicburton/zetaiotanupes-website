@@ -30,47 +30,87 @@
       </div>
 
       <div class="nav-links">
-        <a href="zi-lineage.html">ZI Lineage</a>
-        <a href="contact.html">Contact Us</a>
         <a href="about-us.html">About Us</a>
-        <a href="fraternity-background.html">Fraternity</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="fraternity-background.html">Fraternity History</a>
+        <a href="zi-lineage.html">ZI Lineage</a>
       </div>
     </nav>
   </header>
-<body>
-    
-  <footer class=site-footer>
-    <div class=footer-contents>
 
-      <!-- LEFT: Logos -->
-      <div class=footer-logos>
-        <img src="images/zi-logo.png" alt="ZI-Logo" width="100" height="100" loading="lazy" decoding="async" fetchpriority="low">
-        <img src="images/klassikcity.png" alt="ZI-Logo" width="100" height="100" loading="lazy" decoding="async" fetchpriority="low">
+  <body>
+
+    <main class="history-main">
+      <section class="history-hero">
+        <h1>ZI Lineage &amp; History</h1>
+        <p>Scroll across every line from 1972 to 2026 and click a line image to open details.</p>
+      </section>
+
+      <section class="history-timeline-wrap" aria-label="ZI lineage and history timeline">
+        <div class="history-scroll-hint">
+          <i class="fa-solid fa-arrows-left-right"></i>
+          <span>Scroll horizontally to explore each line.</span>
+        </div>
+
+        <div class="history-timeline" id="historyTimeline" role="list"></div>
+      </section>
+    </main>
+
+    <section class="history-detail-panel" id="historyDetailPanel" aria-hidden="true">
+      <button class="history-panel-close" id="historyPanelClose" aria-label="Close history details">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="history-detail-grid">
+        <div class="history-detail-header">
+          <p class="history-detail-year" id="historyDetailYear">1972</p>
+          <h2 class="history-detail-line" id="historyDetailLine">Founding Line</h2>
+          <p class="history-detail-description" id="historyDetailDescription"></p>
+        </div>
+
+        <div class="history-detail-members">
+          <h3>Names from this line</h3>
+          <ul id="historyDetailNames"></ul>
+        </div>
+
+        <div class="history-detail-gallery" id="historyDetailGallery"></div>
+      </div>
+    </section>
+
+    <footer class=site-footer>
+      <div class=footer-contents>
+
+        <!-- LEFT: Logos -->
+        <div class=footer-logos>
+          <img src="images/zi-logo.png" alt="ZI-Logo" width="100" height="100" loading="lazy" decoding="async"
+            fetchpriority="low">
+          <img src="images/klassikcity.png" alt="ZI-Logo" width="100" height="100" loading="lazy" decoding="async"
+            fetchpriority="low">
+        </div>
+
+        <!-- CENTER: Copyright -->
+        <div class="copyright">&copy; <span id="year"></span> Zeta Iota Nupes. All rights reserved</div>
+
+        <!-- RIGHT: Contact -->
+        <div class=footer-contact>
+          <a href="tel:16786998369">
+            <i class="fa-solid fa-phone"></i>
+            (678) 378-9963
+          </a>
+          <a href="mailto:uganupes@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            uganupes@gmail.com
+          </a>
+        </div>
       </div>
 
-      <!-- CENTER: Copyright -->
-      <div class="copyright">&copy; <span id="year"></span> Zeta Iota Nupes. All rights reserved</div>
-
-      <!-- RIGHT: Contact -->
-      <div class=footer-contact>
-        <a href="tel:16786998369">
-          <i class="fa-solid fa-phone"></i>
-          (678) 378-9963
-        </a>
-        <a href="mailto:uganupes@gmail.com">
-          <i class="fa-solid fa-envelope"></i>
-          uganupes@gmail.com
-        </a>
-      </div>
-    </div>
-
-    <!-- Scripts -->
-    <script>
-      // Auto-update footer year
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-    <script src="js/main.js"></script>
-  </footer>
-</body>
+      <!-- Scripts -->
+      <script>
+        // Auto-update footer year
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+      <script src="js/main.js"></script>
+    </footer>
+  </body>
 
 </html>
