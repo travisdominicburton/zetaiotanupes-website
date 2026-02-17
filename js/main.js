@@ -15,13 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentIndex = 0;
     const totalImages = images.length;
 
-    // Function to update carousel position
     function updateCarousel() {
       const offset = -currentIndex * 100;
       track.style.transform = `translateX(${offset}%)`;
     }
 
-    // Next button
     if (nextBtn) {
       nextBtn.addEventListener('click', function () {
         currentIndex = (currentIndex + 1) % totalImages;
@@ -29,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    // Previous button
     if (prevBtn) {
       prevBtn.addEventListener('click', function () {
         currentIndex = (currentIndex - 1 + totalImages) % totalImages;
@@ -37,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    // Auto-play carousel every 10 seconds
     setInterval(function () {
       currentIndex = (currentIndex + 1) % totalImages;
       updateCarousel();
@@ -47,8 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // ============================================
   // MEMBER DIALOG FUNCTIONALITY
   // ============================================
-
-  // Get DOM elements
   const dialog = document.getElementById('memberDialog');
   const dialogOverlay = document.getElementById('dialogOverlay');
   const dialogClose = document.getElementById('dialogClose');
@@ -60,14 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const dialogYear = document.getElementById('dialogYear');
   const dialogHometown = document.getElementById('dialogHometown');
 
-  // Only run member dialog code if dialog exists on page
   if (dialog) {
-    // Get all member circles
     const memberCircles = document.querySelectorAll('.member-circle');
 
-    // Function to open dialog
     function openDialog(memberElement) {
-      // Read data from the clicked element's data attributes
       const name = memberElement.getAttribute('data-name');
       const title = memberElement.getAttribute('data-title');
       const major = memberElement.getAttribute('data-major');
@@ -76,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const description = memberElement.getAttribute('data-description');
       const image = memberElement.getAttribute('data-image');
 
-      // Populate dialog with member data
       if (dialogImage) {
         dialogImage.src = image;
         dialogImage.alt = name;
@@ -88,18 +77,15 @@ document.addEventListener('DOMContentLoaded', function () {
       if (dialogYear) dialogYear.textContent = year;
       if (dialogHometown) dialogHometown.textContent = hometown;
 
-      // Show dialog
       dialog.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      document.body.style.overflow = 'hidden';
     }
 
-    // Function to close dialog
     function closeDialog() {
       dialog.classList.remove('active');
-      document.body.style.overflow = ''; // Restore scrolling
+      document.body.style.overflow = '';
     }
 
-    // Add click event to all member circles
     memberCircles.forEach(circle => {
       circle.addEventListener('click', (e) => {
         e.preventDefault();
@@ -107,24 +93,20 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-    // Close dialog when clicking close button
     if (dialogClose) {
       dialogClose.addEventListener('click', closeDialog);
     }
 
-    // Close dialog when clicking overlay
     if (dialogOverlay) {
       dialogOverlay.addEventListener('click', closeDialog);
     }
 
-    // Close dialog with Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && dialog.classList.contains('active')) {
         closeDialog();
       }
     });
 
-    // Prevent closing when clicking inside dialog content
     const dialogContent = document.getElementById('dialogContent');
     if (dialogContent) {
       dialogContent.addEventListener('click', (e) => {
@@ -147,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const detailGallery = document.getElementById('historyDetailGallery');
     const closePanelBtn = document.getElementById('historyPanelClose');
 
-    // Actual lines from your PDF organized by crossing year
     const actualLines = {
       1971: [
         {
@@ -624,13 +605,20 @@ document.addEventListener('DOMContentLoaded', function () {
       ]
     };
 
+    // Season order - Winter first, Fall second, Spring third
+    // (so Spring ends up rightmost since timeline goes newest → oldest left to right)
+    const seasonOrder = { 'Winter': 1, 'Fall': 2, 'Spring': 3 };
+
     // Build the timeline from 2025 down to 1971
     const lines = [];
 
     for (let year = 2025; year >= 1971; year -= 1) {
       if (actualLines[year]) {
-        // This year has line(s)
-        actualLines[year].forEach((lineData) => {
+        const sortedLines = [...actualLines[year]].sort((a, b) => {
+          return (seasonOrder[a.season] || 99) - (seasonOrder[b.season] || 99);
+        });
+
+        sortedLines.forEach((lineData) => {
           lines.push({
             year,
             season: lineData.season,
@@ -643,6 +631,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
+    // Panel open/close functions - OUTSIDE the for loop
     function openHistoryPanel(lineData) {
       if (!detailPanel) return;
 
@@ -667,6 +656,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.style.overflow = '';
     }
 
+    // Build cards - OUTSIDE the for loop
     lines.forEach((lineData) => {
       const card = document.createElement('article');
       card.className = 'history-card';
@@ -690,6 +680,7 @@ document.addEventListener('DOMContentLoaded', function () {
       historyTimeline.appendChild(card);
     });
 
+    // Event listeners - OUTSIDE the for loop
     if (closePanelBtn) {
       closePanelBtn.addEventListener('click', closeHistoryPanel);
     }
@@ -699,5 +690,7 @@ document.addEventListener('DOMContentLoaded', function () {
         closeHistoryPanel();
       }
     });
-  }
-}); 
+
+  } // end if (historyTimeline)
+
+}); // end DOMContentLoaded
