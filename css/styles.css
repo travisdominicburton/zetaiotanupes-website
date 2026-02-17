@@ -998,43 +998,6 @@ body {
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
 }
 
-.history-section {
-  position: relative;
-  margin-bottom: 8rem;
-  padding: 3rem;
-  background: linear-gradient(145deg, #2a0000 0%, #1a0000 100%);
-  border-left: 4px solid #8B0000;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(139, 0, 0, 0.3);
-}
-
-.history-section::after {
-  content: '';
-  position: absolute;
-  bottom: -8rem;
-  left: 0;
-  right: 0;
-  height: 8rem;
-  background: linear-gradient(
-    to bottom,
-    rgba(139, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 1) 50%,
-    rgba(139, 0, 0, 0.15) 100%
-  );
-  pointer-events: none;
-  z-index: 0;
-}
-
-.history-section:last-of-type::after {
-  display: none;
-}
-
-.history-section:hover {
-  transform: translateY(-2px);
-  transition: transform 0.3s ease;
-  box-shadow: 0 6px 25px rgba(139, 0, 0, 0.4);
-}
-
 .hero-overlay {
   position: relative;
   z-index: 1;
@@ -1082,7 +1045,7 @@ body {
 
 .history-section {
   position: relative;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
   padding: 3rem;
   background: linear-gradient(150deg, rgba(110, 9, 16, 0.9) 0%, rgba(70, 6, 10, 0.94) 100%);
   border-radius: 8px;
@@ -1649,6 +1612,87 @@ sup {
   
   .history-detail-panel { height: 78vh; }
   
+  /* Fraternity History Page - Tablet Fixes */
+  .hero-section {
+    height: 350px;
+    padding: 50px 20px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    letter-spacing: 0.15em;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .content-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .history-section {
+    padding: 2rem 1.5rem;
+    margin-bottom: 5rem;
+    overflow: hidden;
+  }
+  
+  .history-section::before {
+    width: 3px;
+  }
+  
+  .history-section::after {
+    bottom: -5rem;
+    height: 5rem;
+  }
+  
+  .section-number {
+    font-size: 3rem;
+    top: -15px;
+    left: 15px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.05rem;
+  }
+  
+  .section-content {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  
+  .founders-list {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  
+  .founders-list li {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.95rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .stat-label {
+    font-size: 1rem;
+  }
+  
+  blockquote.founding-principle {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+  
   .history-detail-grid {
     grid-template-columns: 1fr;
     grid-template-areas: "header" "members" "gallery";
@@ -1755,6 +1799,169 @@ sup {
   /* ZI Lineage */
   .history-card-content { padding: 12px; }
   .history-card-year { font-size: 1.3rem; }
+  
+  /* Fraternity History Page - Mobile Fixes */
+  .hero-section {
+    height: auto;
+    min-height: 300px;
+    padding: 40px 15px;
+  }
+  
+  .hero-overlay {
+    padding: 1rem;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+  }
+  
+  .content-container {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .history-section {
+    padding: 1.5rem 1rem;
+    margin-bottom: 4rem;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .history-section::before {
+    left: 0;
+    width: 3px;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .history-section::after {
+    bottom: -4rem;
+    height: 4rem;
+  }
+  
+  .section-number {
+    font-size: 2.5rem;
+    top: -12px;
+    left: 10px;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-content {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  
+  .section-content p {
+    margin-bottom: 1rem;
+  }
+  
+  .founders-highlight {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+  }
+  
+  .founders-highlight h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .founders-list {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .founders-list li {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border-left-width: 2px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  blockquote.founding-principle {
+    padding: 1.2rem 1rem;
+    font-size: 0.95rem;
+    margin: 1.5rem 0;
+    line-height: 1.6;
+  }
+  
+  blockquote.founding-principle::before {
+    font-size: 3.5rem;
+    top: -5px;
+    left: 5px;
+  }
+  
+  .achievement-text {
+    font-size: 1rem;
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .achievement-text strong {
+    font-size: 1.2em;
+    letter-spacing: 0.08em;
+  }
+  
+  .milestone-box {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+  }
+  
+  .milestone-date {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .milestone-box p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  
+  .stat-card {
+    padding: 1.5rem 1rem;
+    border-radius: 4px;
+  }
+  
+  .stat-number {
+    font-size: 2.2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.95rem;
+  }
+  
+  .closing-statement {
+    font-size: 1rem;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    line-height: 1.6;
+    border-radius: 4px;
+  }
   
   /* Footer - Very compact */
   .site-footer {
