@@ -598,7 +598,7 @@ document.addEventListener('DOMContentLoaded', function () {
       2020: [
         {
           season: 'Spring',
-          line: 'The Zeta Iota Spring 2020',
+          line: 'The Five Survivors of the ZI Barrikade',
           description: 'Zeta Iota Spring 2020',
           names: ['Dwight Coles III', 'Chazz Lezama-Francois', 'Tyler Fullwood', 'Brandon Trowel', 'Channing Tindall'],
           images: ['images/klassikcity.png', 'images/zi-logo.png', 'images/klassikcity.png']
