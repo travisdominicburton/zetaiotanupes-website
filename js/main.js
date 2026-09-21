@@ -693,4 +693,97 @@ document.addEventListener('DOMContentLoaded', function () {
 
   } // end if (historyTimeline)
 
+  // ============================================
+  // HOMECOMING PAYMENTS
+  // ============================================
+  const amountOptions = document.querySelector('[data-amount-options]');
+  const payLinks = document.querySelectorAll('[data-pay-link]');
+  const copyTargets = document.querySelectorAll('[data-copy]');
+  const copyToast = document.getElementById('copyToast');
+
+  // --- Amount presets: rewrite the Cash App / Venmo / PayPal links ---
+  if (amountOptions && payLinks.length) {
+    const amountButtons = amountOptions.querySelectorAll('.amount-btn');
+
+    function buildPayUrl(link, amount) {
+      const provider = link.getAttribute('data-pay-link');
+      const handle = (link.getAttribute('data-handle') || '').replace(/^[$@]/, '');
+
+      if (provider === 'cashapp') {
+        return amount
+          ? `https://cash.app/$${handle}/${amount}`
+          : `https://cash.app/$${handle}`;
+      }
+
+      if (provider === 'venmo') {
+        return amount
+          ? `https://venmo.com/u/${handle}?txn=pay&amount=${amount}&note=Homecoming`
+          : `https://venmo.com/u/${handle}`;
+      }
+
+      if (provider === 'paypal') {
+        const user = handle.replace(/^paypal\.me\//, '');
+        return amount
+          ? `https://www.paypal.com/paypalme/${user}/${amount}`
+          : `https://www.paypal.com/paypalme/${user}`;
+      }
+
+      return link.getAttribute('href');
+    }
+
+    function setAmount(amount) {
+      payLinks.forEach((link) => {
+        link.setAttribute('href', buildPayUrl(link, amount));
+      });
+    }
+
+    amountButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        amountButtons.forEach((other) => other.classList.remove('is-active'));
+        button.classList.add('is-active');
+        setAmount(button.getAttribute('data-amount') || '');
+      });
+    });
+  }
+
+  // --- Copy to clipboard for Zelle / Apple Cash ---
+  if (copyTargets.length) {
+    let toastTimer = null;
+
+    function showToast(message) {
+      if (!copyToast) return;
+      copyToast.textContent = message;
+      copyToast.classList.add('active');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => copyToast.classList.remove('active'), 2200);
+    }
+
+    function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      // Fallback for non-secure contexts
+      const temp = document.createElement('textarea');
+      temp.value = text;
+      temp.setAttribute('readonly', '');
+      temp.style.position = 'absolute';
+      temp.style.left = '-9999px';
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand('copy');
+      document.body.removeChild(temp);
+      return Promise.resolve();
+    }
+
+    copyTargets.forEach((target) => {
+      target.addEventListener('click', () => {
+        const value = target.getAttribute('data-copy');
+        copyText(value)
+          .then(() => showToast(`Copied ${value}`))
+          .catch(() => showToast(value));
+      });
+    });
+  }
+
 }); // end DOMContentLoaded

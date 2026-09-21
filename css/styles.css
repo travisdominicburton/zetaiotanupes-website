@@ -67,7 +67,7 @@ body {
 
 .navbar .nav-links {
   display: flex;
-  gap: 80px;
+  gap: clamp(28px, 4vw, 80px);
   align-items: center;
   margin-left: auto;
 }
@@ -2321,4 +2321,301 @@ sup {
   .history-timeline::-webkit-scrollbar-thumb:hover {
     background: var(--color-crimson);
   }
+}
+/* ===================================
+   HOMECOMING PAGE
+   =================================== */
+.homecoming-main {
+  background: radial-gradient(circle, #dc143c 0%, #8b0000 50%, #000000 100%);
+  min-height: calc(100vh - 200px);
+  padding: 40px 20px 80px;
+}
+
+.homecoming-hero {
+  text-align: center;
+  padding: 40px 20px 50px;
+  margin-bottom: 20px;
+}
+
+.homecoming-hero h1 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0 0 10px 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+.homecoming-hero p {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  color: var(--color-gold);
+  font-style: italic;
+  margin: 0;
+}
+
+.homecoming-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.homecoming-intro,
+.donate-section {
+  background: rgba(42, 8, 8, 0.9);
+  border: 3px solid var(--color-dark-red);
+  border-radius: 16px;
+  padding: 45px 35px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.homecoming-description {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-light-gray);
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 25px;
+}
+
+/* ---- Amount presets ---- */
+.amount-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0 auto 35px;
+}
+
+.amount-btn {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  background: rgba(26, 5, 5, 0.9);
+  border: 2px solid var(--color-dark-red);
+  border-radius: 50px;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.amount-btn:hover {
+  border-color: var(--color-crimson);
+  color: var(--color-white);
+  transform: translateY(-3px);
+}
+
+.amount-btn.is-active {
+  background: linear-gradient(135deg, var(--color-dark-red), var(--color-crimson));
+  border-color: var(--color-gold);
+  color: var(--color-white);
+  box-shadow: 0 6px 18px rgba(220, 20, 60, 0.45);
+}
+
+/* ---- Payment method tiles ---- */
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.payment-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: rgba(26, 5, 5, 0.85);
+  border: 2px solid var(--color-dark-red);
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.payment-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-crimson);
+  box-shadow: 0 8px 25px rgba(220, 20, 60, 0.4);
+}
+
+.payment-icon {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 6px;
+  background: linear-gradient(135deg, var(--color-dark-red), var(--color-crimson));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--color-white);
+  box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--color-white);
+  margin: 0;
+}
+
+.payment-handle {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-gold);
+  word-break: break-word;
+}
+
+.payment-action {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-light-gray);
+  font-style: italic;
+}
+
+/* Brand accents on hover */
+.payment-card.cashapp:hover .payment-icon {
+  background: linear-gradient(135deg, #00d632, #008a20);
+  box-shadow: 0 6px 20px rgba(0, 214, 50, 0.45);
+}
+
+.payment-card.venmo:hover .payment-icon {
+  background: linear-gradient(135deg, #008cff, #0055a5);
+  box-shadow: 0 6px 20px rgba(0, 140, 255, 0.45);
+}
+
+.payment-card.paypal:hover .payment-icon {
+  background: linear-gradient(135deg, #0070ba, #003087);
+  box-shadow: 0 6px 20px rgba(0, 112, 186, 0.45);
+}
+
+.payment-card.zelle:hover .payment-icon {
+  background: linear-gradient(135deg, #6d1ed4, #3f0f80);
+  box-shadow: 0 6px 20px rgba(109, 30, 212, 0.45);
+}
+
+.payment-card.applepay:hover .payment-icon {
+  background: linear-gradient(135deg, #3a3a3a, #000000);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.payment-note {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-light-gray);
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 25px auto 0;
+  font-style: italic;
+}
+
+.payment-note strong {
+  color: var(--color-gold);
+  font-style: normal;
+}
+
+/* ---- Copy confirmation toast ---- */
+.copy-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 40px;
+  transform: translate(-50%, 20px);
+  background: var(--color-dark-bg);
+  border: 2px solid var(--color-gold);
+  border-radius: 50px;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 12px 28px;
+  box-shadow: var(--shadow-heavy);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2000;
+}
+
+.copy-toast.active {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---- Questions ---- */
+.homecoming-contact {
+  text-align: center;
+  padding: 20px;
+}
+
+.homecoming-contact h2 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  color: var(--color-white);
+  margin: 0 0 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.homecoming-contact p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-light-gray);
+  margin: 0 0 25px 0;
+}
+
+.homecoming-contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.homecoming-contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-gold);
+  text-decoration: none;
+  background: rgba(42, 8, 8, 0.8);
+  border: 2px solid var(--color-dark-red);
+  border-radius: 50px;
+  padding: 12px 26px;
+  transition: all 0.3s ease;
+}
+
+.homecoming-contact-links a:hover {
+  color: var(--color-white);
+  border-color: var(--color-crimson);
+  transform: translateY(-3px);
+}
+
+/* ---- Homecoming responsive ---- */
+@media (max-width: 760px) {
+  .homecoming-hero h1 { font-size: 2.2rem; letter-spacing: 1px; }
+  .homecoming-hero p { font-size: 1.05rem; }
+  .homecoming-content { padding: 0 6px; gap: 35px; }
+  .homecoming-intro,
+  .donate-section { padding: 30px 18px; }
+  .payment-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
+  .payment-card { padding: 22px 12px; }
+  .payment-icon { width: 58px; height: 58px; font-size: 1.6rem; }
+  .amount-btn { padding: 10px 20px; font-size: 0.95rem; }
+  .homecoming-contact h2 { font-size: 1.7rem; }
+}
+
+@media (max-width: 480px) {
+  .homecoming-hero h1 { font-size: 1.8rem; }
+  .payment-grid { grid-template-columns: 1fr 1fr; }
+  .amount-options { gap: 10px; }
 }
